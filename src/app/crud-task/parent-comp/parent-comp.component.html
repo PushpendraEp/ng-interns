@@ -1,0 +1,14 @@
+<div class="m-0 border border-5 border-danger bg-dark" style="height: 100vh; overflow: auto;">
+
+    <h1 class="mt-5 text-danger mb-5 p-5">Parent Component</h1>
+
+    <div class="row m-0 px-5 pb-5">
+        <div class="col border border-5 border-primary text-light">
+            <app-fields (sendToParent)="getDataInParent($event)" [rowD]="rowData"></app-fields>
+        </div>
+        <div class="col border border-5 border-primary text-light">
+            <app-table (rowData)="getRowData($event)"></app-table>
+        </div>
+    </div>
+
+</div>

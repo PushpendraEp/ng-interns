@@ -1,0 +1,180 @@
+<div style="height: 100vh; overflow: auto;" class="d-flex align-items-center justify-content-center bg-dark">
+    <div>
+        <div class="container mt-4 border border-1 border-info p-5 bg-secondary">
+
+            <h1 class="text-center pb-3">Reactive form with validation</h1>
+
+            <form [formGroup]="registerForm" (ngSubmit)="registerForm.status !== 'INVALID' && registerFn()">
+
+
+
+                <div class="mt-1">
+
+                    <label for="fname" class="">First Name</label>
+
+                    <input type="text" class="form-control" id="fname" placeholder="First Name" formControlName="fname"
+                        [ngClass]="{error : getControl('fname')?.errors && getControl('fname')?.touched}">
+
+                    <div *ngIf="getControl('fname')?.errors && getControl('fname')?.touched">
+
+                        <small class="text-pink" *ngIf="getControl('fname')?.errors?.['required']">First Name field is
+                            required</small>
+
+                        <small class="text-pink" *ngIf="getControl('fname')?.errors?.['maxlength']">Only 32 characters
+                            are allowed.</small>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="mt-1">
+
+                    <label for="lname" class="">Last Name</label>
+
+                    <input type="text" class="form-control" id="lname" placeholder="Last Name" formControlName="lname"
+                        [ngClass]="{error : getControl('lname')?.errors && getControl('lname')?.touched}">
+
+                    <div *ngIf="getControl('lname')?.errors && getControl('lname')?.touched">
+
+                        <small class="text-pink" *ngIf="getControl('lname')?.errors?.['required']">Last Name field is
+                            required</small>
+
+                        <small class="text-pink" *ngIf="getControl('lname')?.errors?.['maxlength']">Only 32 characters
+                            are allowed.</small>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="mt-1">
+
+                    <label for="age" class="">Age</label>
+
+                    <input type="number" class="form-control" id="age" placeholder="Age" formControlName="age"
+                        [ngClass]="{error : getControl('age')?.errors && getControl('age')?.touched}">
+
+                    <div *ngIf="getControl('age')?.errors && getControl('age')?.touched">
+
+                        <small class="text-pink" *ngIf="getControl('age')?.errors?.['required']">Age field is
+                            required</small>
+
+                        <small class="text-pink"
+                            *ngIf="getControl('age')?.errors?.['min'] || getControl('age')?.errors?.['max']">Age must be
+                            in between 18 years to 60 years.</small><br>
+
+                        <small class="text-pink" *ngIf="getControl('age')?.errors?.['pattern']">Please enter a valid
+                            age.</small>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="mt-1">
+
+                    <label for="mobile" class="">Mobile</label>
+
+                    <input type="text" class="form-control" id="mobile" placeholder="Mobile" formControlName="mobile"
+                        [ngClass]="{error : getControl('mobile')?.errors && getControl('mobile')?.touched}">
+
+                    <div *ngIf="getControl('mobile')?.errors && getControl('mobile')?.touched">
+
+                        <small class="text-pink" *ngIf="getControl('mobile')?.errors?.['required']">Mobile field is
+                            required</small>
+
+                        <small class="text-pink"
+                            *ngIf="getControl('mobile')?.errors?.['minlength'] || getControl('mobile')?.errors?.['maxlength'] || getControl('mobile')?.errors?.['pattern']">Please
+                            enter a valid mobile no.</small>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="mt-1">
+
+                    <label for="email" class="">Email</label>
+
+                    <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email"
+                        [ngClass]="{error : getControl('email')?.errors && getControl('email')?.touched}">
+
+                    <div *ngIf="getControl('email')?.errors && getControl('email')?.touched">
+
+                        <small class="text-pink" *ngIf="getControl('email')?.errors?.['required']">Email field is
+                            required</small>
+
+                        <small class="text-pink" *ngIf="getControl('email')?.errors?.['maxlength']">Email should be
+                            maximum 32 characters long.</small>
+
+                        <small class="text-pink" *ngIf="getControl('email')?.errors?.['pattern']">Please enter a valid
+                            email.</small>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="mt-1">
+
+                    <label for="password" class="">Password</label>
+
+                    <input type="password" autocomplete class="form-control" id="password" placeholder="Password"
+                        formControlName="password"
+                        [ngClass]="{error : getControl('password')?.errors && getControl('password')?.touched}">
+
+                    <div *ngIf="getControl('password')?.errors && getControl('password')?.touched">
+
+                        <small class="text-pink" *ngIf="getControl('password')?.errors?.['required']">Password field
+                            is required</small>
+
+                        <small class="text-pink"
+                            *ngIf="getControl('password')?.errors?.['minlength'] || getControl('password')?.errors?.['maxlength']">Password
+                            should be minimum 8 and maximum 32 characters long.</small>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="mt-1">
+
+                    <label for="confirm_password" class="">Confirm Password</label>
+
+                    <input type="password" autocomplete class="form-control" id="confirm_password"
+                        placeholder="Confirm Password" formControlName="confirm_password"
+                        [ngClass]="{error : getControl('confirm_password')?.errors && getControl('confirm_password')?.touched}">
+
+                    <div *ngIf="getControl('confirm_password')?.errors && getControl('confirm_password')?.touched">
+
+                        <small class="text-pink" *ngIf="getControl('confirm_password')?.errors?.['required']">Confirm
+                            Password field is required</small>
+
+                        <small class="text-pink"
+                            *ngIf="getControl('confirm_password')?.errors?.['maxlength'] || getControl('confirm_password')?.errors?.['maxlength']">Confirm
+                            Password should be minimum 8 and maximum 32 characters long.</small>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="my-3">
+
+                    <input type="submit" class="btn btn-success bg-success" [disabled]="registerForm.status === 'INVALID'">
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>

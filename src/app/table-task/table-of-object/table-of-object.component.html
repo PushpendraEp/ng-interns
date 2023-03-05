@@ -1,0 +1,19 @@
+<div style="height: 100vh; overflow: auto;" class="d-flex align-items-center justify-content-center bg-dark">
+    <div class="bg-secondary p-4 border">
+        <table class="table text-dark" style="width: 500px;">
+            <thead>
+              <tr>
+                <th scope="col" *ngFor="let head of dataHeader">{{head}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let rows of data">
+                <th>{{rows.sn}}</th>
+                <th>{{rows.name}}</th>
+                <th>{{rows.age}}</th>
+                <th>{{rows.course}}</th>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

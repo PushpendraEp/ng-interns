@@ -1,0 +1,16 @@
+td,
+th {
+    border-color: antiquewhite !important;
+}
+
+input{
+    background-color: rgb(210, 201, 201);
+}
+
+input:focus{
+    background-color: rgb(210, 201, 201);
+}
+
+select{
+    background-color: rgb(210, 201, 201);
+}

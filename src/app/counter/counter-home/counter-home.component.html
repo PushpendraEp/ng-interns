@@ -1,0 +1,35 @@
+<div style="height: 100vh; overflow: auto;" class="d-flex align-items-center justify-content-center bg-dark">
+    <div>
+        <div class="row text-center">
+            <h1 class="text-light">
+                {{num}}
+            </h1>
+        </div>
+        <div class="p-5">
+            <div class="row d-flex">
+                <div class="col text-start">
+                    <button class="btn btn-sm btn-danger p-4 border" (click)="handleBtnClick('-')">-</button>
+                </div>
+                <div class="col text-end">
+                    <button class="btn btn-sm btn-success p-4 border" (click)="handleBtnClick('+')">+</button>
+                </div>
+            </div>
+            <div class="row pt-3">
+                <div class="col text-start">
+                    <button class="btn btn-sm btn-danger p-4 border" (click)="handleBtnClick('-5')">-5</button>
+                </div>
+                <div class="col text-end">
+                    <button class="btn btn-sm btn-success p-4 border" (click)="handleBtnClick('+5')">+5</button>
+                </div>
+            </div>
+            <div class="row pt-3">
+                <div class="col text-start">
+                    <button class="btn btn-sm btn-danger p-4 border" (click)="handleBtnClick('-Random')">- <span class="d-block">Random</span></button>
+                </div>
+                <div class="col text-end">
+                    <button class="btn btn-sm btn-success p-4 border" (click)="handleBtnClick('+Random')">+ <span class="d-block">Random</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

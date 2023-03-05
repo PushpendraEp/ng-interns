@@ -1,0 +1,24 @@
+<div class="text-light fs-3">Child Component</div>
+<div class="p-5">
+    <table class="bg-light w-100 text-center">
+        <thead>
+            <tr>
+                <th class="border border-3 border-info">SN</th>
+                <th class="border border-3 border-info">Name</th>
+                <th class="border border-3 border-info">Class</th>
+                <th class="border border-3 border-info">Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of formDataArray?.user; let i = index;">
+                <td class="border border-3 border-info">{{i + 1}}</td>
+                <td class="border border-3 border-info">{{data.name}}</td>
+                <td class="border border-3 border-info">{{data.class}}</td>
+                <td class="border border-3 border-info">{{data.age}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="text-center">
+        <button class="btn btn-light mt-3" (click)="editForm()">Edit</button>
+    </div>
+</div>

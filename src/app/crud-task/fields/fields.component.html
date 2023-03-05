@@ -1,0 +1,44 @@
+<div class="p-5">
+    <h1 class="text-info ">Field Component</h1>
+    <form #form="ngForm" (ngSubmit)="onSubmit()" class="p-5">
+        <div>
+            <label class="form-label">Id</label>
+            <input #id="ngModel" [pattern]="integreRegex" [ngClass]="{error : id.errors && id.touched}" required
+                class="form-control border border-1 border-dark" name="id" ngModel type="number" id="">
+            <div *ngIf="id.errors && id.touched" class="text-danger">
+                <span *ngIf="id.errors['required']">Id field is required</span>
+            </div>
+        </div>
+        <div>
+            <label class="form-label">Name</label>
+            <input #name="ngModel" [ngClass]="{error : name.errors && name.touched}" required
+                class="form-control border border-1 border-dark" name="name" ngModel type="text" id="">
+            <div *ngIf="name.errors && name.touched" class="text-danger">
+                <span>Name field is required</span>
+            </div>
+        </div>
+        <div>
+            <label class="form-label">Class</label>
+            <input #class="ngModel" [ngClass]="{error : class.errors && class.touched}" required
+                class="form-control border border-1 border-dark" name="class" ngModel type="text" id="">
+            <div *ngIf="class.errors && class.touched" class="text-danger">
+                <span>Class field is required</span>
+            </div>
+        </div>
+        <div>
+            <label class="form-label">Age</label>
+            <input #age="ngModel" [pattern]="integreRegex" [ngClass]="{error : age.errors && age.touched}" required
+                class="form-control border border-1 border-dark" name="age" ngModel type="number" id="" min="1"
+                max="125">
+            <div *ngIf="age.errors && age.touched" class="text-danger">
+                <span *ngIf="age.errors['required']">Age field is required</span>
+                <small *ngIf="age.errors['min'] || age.errors['max']">Age should not lesser than 1
+                    or greater than 125</small>
+                <small *ngIf="age.errors['pattern']">Please enter a valid Age</small>
+            </div>
+        </div>
+        <button [disabled]="form.status == 'INVALID'"
+            class="mt-3 btn btn-sm btn-primary text-dark fw-bold">Submit</button>
+    </form>
+</div>
+<!-- [disabled]="form.status == 'INVALID'" -->

@@ -1,0 +1,14 @@
+<div [ngStyle]="!modalCloseBtn ? {'height': '100vh'}:{}" style="overflow: auto;"
+    class="bg-dark d-flex align-items-center justify-content-center">
+    <div [ngClass]="modalCloseBtn ? 'border' : ''" class="p-5 rounded">
+        <a routerLink="/" (click)="closeModal()" class="btn btn-sm btn-outline-info m-2 p-3 rounded">Home</a>
+        <a routerLink="/counter" (click)="closeModal()" class="btn btn-sm btn-outline-info m-2 p-3 rounded">Counter</a>
+        <a routerLink="table-task" (click)="closeModal()" class="btn btn-sm btn-outline-info m-2 p-3 rounded">Table</a>
+        <a routerLink="parent-child-comp" (click)="closeModal()" class="btn btn-sm btn-outline-info m-2 p-3 rounded">Component Data Share</a>
+        <a routerLink="template-form" (click)="closeModal()" class="btn btn-sm btn-outline-info m-2 p-3 rounded">Template Drivven Form</a>
+        <a routerLink="reactive-form" (click)="closeModal()" class="btn btn-sm btn-outline-info m-2 p-3 rounded">Reactive Form</a>
+        <a routerLink="crud" (click)="closeModal()" class="btn btn-sm btn-outline-info m-2 p-3 rounded">CRUD</a>
+        <a routerLink="form-array" (click)="closeModal()" class="btn btn-sm btn-outline-info m-2 p-3 rounded">Form Array</a>
+        <a routerLink="country-capital" (click)="closeModal()" class="btn btn-sm btn-outline-info m-2 p-3 rounded">Country Capital</a>
+    </div>
+</div>

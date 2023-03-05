@@ -1,0 +1,8 @@
+<div class="bg-dark d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <select class="p-2" (ngModelChange)="selectedCountry($event)" (ngModel)="countryData" name="" id="">
+        <option [ngValue]="country" *ngFor="let country of countryData">{{country.name.common}}</option>
+    </select>
+    <div *ngIf="countryCapital" class="text-light fs-1 border p-5" style="position: fixed; top: 15%;">
+        {{countryCapital}}
+    </div>
+</div>

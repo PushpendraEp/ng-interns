@@ -1,0 +1,7 @@
+<div style="height: 100vh; overflow: auto;" class="p-5 border border-5 border-info bg-dark">
+    <h2 class="text-primary">This is parent component !!</h2>
+    <app-child-com [parentData]="parentData" (sendToParent)="getDataFromChild($event)"></app-child-com>
+    <h1 class="text-info">{{parentData}}</h1>
+    <br>
+    <h4 class="text-primary">{{childData}}</h4>
+</div>
