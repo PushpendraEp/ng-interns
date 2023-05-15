@@ -1,0 +1,36 @@
+#main {
+    height: 100vh;
+    width: 100%;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#table-wrapper {
+    background-color: rgb(255 245 245 / 71%);
+    border: 5px solid skyblue;
+}
+
+.col-header {
+    display: flex;
+    flex-direction: column;
+}
+
+td,
+th {
+    padding: 10px 20px;
+    border: 1px solid gray;
+}
+
+input {
+    border-radius: 50px;
+    padding: 5px 10px;
+    border: 1px solid;
+    outline: none;
+}
+
+input:focus {
+    border-color: rgb(100, 96, 210);
+    color: rgb(100, 96, 210);
+}

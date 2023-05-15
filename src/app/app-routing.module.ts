@@ -40,6 +40,14 @@ const routes: Routes = [
     loadChildren: () => import('./counter/counter.module').then(p => p.CounterModule)
   },
   {
+    path: 'dynamic-table-column',
+    loadChildren: () => import('./dynamic-table-column/dynamic-table-column.module').then(p => p.DynamicTableColumnModule)
+  },
+  {
+    path: 'dynamic-table-search',
+    loadChildren: () => import('./dynamic-table-search/dynamic-table-search.module').then(p => p.DynamicTableSearchModule)
+  },
+  {
     path: '**',
     component: NotFoundComponent
   }
