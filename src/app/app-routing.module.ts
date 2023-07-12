@@ -48,6 +48,10 @@ const routes: Routes = [
     loadChildren: () => import('./dynamic-table-search/dynamic-table-search.module').then(p => p.DynamicTableSearchModule)
   },
   {
+    path: 'selection-box-task',
+    loadChildren: () => import('./selection-box-task/selection-box-task.module').then(p => p.SelectionBoxTaskModule)
+  },
+  {
     path: '**',
     component: NotFoundComponent
   }

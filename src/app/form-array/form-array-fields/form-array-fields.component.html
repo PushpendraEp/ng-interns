@@ -1,20 +1,20 @@
 <div>
     <div class="text-light fs-3">Child Component</div>
     <div class="p-5">
-        <form [formGroup]="formData">
+        <form [formGroup]="formData" (ngSubmit)="submitUser()">
             <div formArrayName="user">
                 <div *ngFor="let lessonForm of getUser.controls; let i = index">
                     <div class="mt-2" [formGroupName]="i">
-                        <input class="mx-1 border border-3 border-info px-2 py-1" type="text" placeholder="Name" formControlName="name">
-                        <input class="mx-1 border border-3 border-info px-2 py-1" type="text" placeholder="Class" formControlName="class">
-                        <input class="mx-1 border border-3 border-info px-2 py-1" type="text" placeholder="Age" formControlName="age">
-                        <input *ngIf="getUser.controls.length > 1" (click)="deleteUser(i)" type="button" class="btn btn-danger" value="-">
+                        <input class="mx-1 border border-3 border-info px-2 py-1" type="text" placeholder="Name" formControlName="name" required />
+                        <input class="mx-1 border border-3 border-info px-2 py-1" type="text" placeholder="Class" formControlName="class" required />
+                        <input class="mx-1 border border-3 border-info px-2 py-1" type="text" placeholder="Age" formControlName="age" required />
+                        <input *ngIf="getUser.controls.length > 1" (click)="deleteUser(i)" type="button" class="btn btn-danger" value="-" />
                     </div>
                 </div>
             </div>
+            
+            <button (click)="addUser()" type="button" class="mt-3 btn btn-primary">Add User</button>
+            <button type="submit" class="mx-3 mt-3 btn btn-success">Submit</button>
         </form>
-    
-        <button (click)="addUser()" class="mt-3 btn btn-primary">Add User</button>
-        <button (click)="submitUser()" class="mx-3 mt-3 btn btn-success">Submit</button>
     </div>
 </div>

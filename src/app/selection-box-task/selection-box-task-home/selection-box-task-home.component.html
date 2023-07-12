@@ -1,0 +1,32 @@
+<div class="main border border-2 border-info">
+    <div class="selection-wrapper w-75">
+        <div class="row m-0">
+
+            <!-- Item Type -->
+            <div class="col">
+                <label class="form-label text-info fw-bold" for="country-id">Select Country</label>
+                <select [(ngModel)]="selectedCountry" (ngModelChange)="changeCountry()" class="form-select" id="country-id">
+                    <option value="" disabled selected>{{ selectCountryPlaceholder ?  'Select Country' : 'Please Wait !!' }}</option>
+                    <option [value]="currentCountry.id" *ngFor="let currentCountry of countryList">{{ selectCountryPlaceholder ? currentCountry.name : 'Please Wait !!' }}</option>
+                </select>
+            </div>
+
+            <!-- Items List -->
+            <div class="col">
+                <label class="form-label text-info fw-bold" for="state-id">Select State</label>
+                <select [(ngModel)]="selectedState" (ngModelChange)="changeState()" class="form-select" id="state-id">
+                    <option value="" disabled selected>{{ selectStatePlaceholder ? 'Select State' : 'Please Wait !!' }}</option>
+                    <option [value]="currentState.id" *ngFor="let currentState of stateList">{{ selectStatePlaceholder ? currentState.name : 'Please Wait !!' }}</option>
+                </select>
+            </div>
+
+            <div class="col">
+                <label class="form-label text-info fw-bold" for="city-id">Select City</label>
+                <select [(ngModel)]="selectedCity" (ngModelChange)="changeCity()" class="form-select" id="city-id">
+                    <option value="" disabled selected>{{ selectCityPlaceholder ? 'Select City' : 'Please Wait !!' }}</option>
+                    <option [value]="currentCity.id" *ngFor="let currentCity of cityList">{{ selectCityPlaceholder ? currentCity.name : 'Please Wait !!'}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
